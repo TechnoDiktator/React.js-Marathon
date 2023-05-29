@@ -1,5 +1,5 @@
 import Footer from "./Footer";
-import "./header.css"
+
 
 
 //both js and jsx files are valis files for react 
@@ -11,9 +11,7 @@ import "./header.css"
 const Header = () =>{
     return (
         <div className="header"> 
-            <h1 id="topic">Header</h1>
-            <p  style={{color : "yellow"   }}>This is a trial</p>
-            <Footer/>
+            <h1 id="topic">Movies Review</h1>
         </div>
         
 
