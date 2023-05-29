@@ -1,6 +1,19 @@
 .App {
   text-align: center;
+  background-color: aquamarine;
 }
+
+
+.header{
+  background-color: bisque;
+}
+
+.footer{
+  background-color: black;
+}
+
+
+
 
 .App-logo {
   height: 40vmin;
