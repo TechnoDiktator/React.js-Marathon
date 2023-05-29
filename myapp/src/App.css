@@ -4,10 +4,28 @@
 }
 
 
+.heading{
+  color: black;
+  padding: 5px;
+  margin: 10px;
+  font-size: 80px;
+  justify-content: center;
+  
+
+}
+
+
 .header{
   color: white;
   background-color: navy;
   padding: 10px 10px 10px;
+  font-size: 20px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -16,11 +34,20 @@ h1 {
 }
 
 .main{
-  display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
   flex-wrap: wrap;
   padding: 15px;  
 
+}
+
+
+.btn{
+  background-color: blue;
+  color: white;
+  padding: 5px;
+  margin: 5px;
 }
 
 .movie{

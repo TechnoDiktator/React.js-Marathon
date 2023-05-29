@@ -11,7 +11,7 @@ import Footer from "./Footer";
 const Header = () =>{
     return (
         <div className="header"> 
-            <h1 id="topic">Movies Review</h1>
+            <h1 id="topic">Using State Hook</h1>
         </div>
         
 
