@@ -20,6 +20,9 @@
   background-color: navy;
   padding: 10px 10px 10px;
   font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .buttons{
@@ -44,10 +47,14 @@ h1 {
 
 
 .btn{
-  background-color: blue;
-  color: white;
-  padding: 5px;
+  background-color:greenyellow;
+  color: black;
+  font-weight: bold;
+  padding: 20px;
   margin: 5px;
+  border: 2px solid black;
+  
+  
 }
 
 .movie{
@@ -59,6 +66,7 @@ h1 {
   font-weight: bold;
   text-align: left;
   width: 15%;
+
 }
 .movie img{
   height: 200px;
@@ -77,6 +85,14 @@ h1 {
 }
 .data h4{
   color: black;
+}
+
+.data_val{
+  justify-content: space-between;
+  background-color: beige;
+  padding: 5px;
+  margin: 5px;
+
 }
 
 

@@ -1,5 +1,5 @@
 import Footer from "./Footer";
-
+import { Link , NavLink } from "react-router-dom";
 
 
 //both js and jsx files are valis files for react 
@@ -9,9 +9,23 @@ import Footer from "./Footer";
 
 
 const Header = () =>{
+
+    const navlinkStyles = ({isActive})=>{
+        return {
+            fontWeight : isActive ? "bold" : "normal",
+            textDecoration : isActive ? "none" : "underline",
+            color : isActive ? "red" : "white",
+            fontSize : "25px"
+        }
+    }
+
     return (
         <div className="header"> 
-            <h1 id="topic">Using State Hook</h1>
+
+            <NavLink style={navlinkStyles} to =  {'/'}>Home</NavLink>
+            <NavLink style={navlinkStyles} to = {'/about'}>About</NavLink>
+            <NavLink style={navlinkStyles} to = {'/contact' } >Home</NavLink>
+        
         </div>
         
 

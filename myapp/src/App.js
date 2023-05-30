@@ -6,60 +6,35 @@ import './App.css';
 import Header from './Header';
 import Movie from './components/Movie';
 import movies from './movies.json'
-
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import {BrowserRouter as Router , Routes , Route , Link} from "react-router-dom"
+import Error from './components/Error';
 
 
 function App(){
-
-  const [state , setState] = useState(1);
-  //const [state2 , setState2] = useState(0);
-  const [data , setData] = useState([]);
-
-
-  //useEffect(()=>{
-  //  window.alert("useEffect Called")
-  //})
-  useEffect(()=>{
-    //window.alert("useEffect Called")
-    async function getData(){
-      const get  = await fetch(`https://hub.dummyapis.com/employee?noofRecords=${state}&idStarts=1001`)
-      const res = get.json() 
-      setData([res])   //data will contain the res
-      console.log(res)
-    }
-
-    getData();
-    document.title = `(${state})Employees online`
-
-  } , [state])
-  //the second arguement is optional if it is not provided then 
-
-
   console.log("Function Body")
-
   return (
-    <div>
-      <Header></Header>
-      {console.log('Inside JSX')}
-      <button onClick={() => { setState( state +1) }}>BUTTON{state}</button>
-      
-      {
-      
-      data.map(  (element ,index) => {
-        return (
+    <Router>
+      <div>
+        <Header></Header>
+        {console.log('Inside JSX')}
+
+        <Routes>
+          {/* Home */}
+          <Route exact path="/"  element = {<Home/>}/>
+          {/* About */}
+          <Route path="/about" element = {<About/>} />
+          {/* Contacts */}
+          <Route path="/contact" element = {<Contact></Contact>} />
           
-          <div className='data' key = {index}>
-            <h4>{element.firstName}</h4>
-            <h4>{element.lastName}</h4>
-            <h4>{element.email}</h4>
-          </div>
+          {/* Error */}
+          <Route path="*" element = {<Error/>} />
 
-        )
-      })
-      
-      }
-
-    </div>
+        </Routes>
+      </div>
+    </Router>
   )
 
 }
