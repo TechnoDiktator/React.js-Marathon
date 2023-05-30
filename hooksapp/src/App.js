@@ -23,13 +23,7 @@ function App() {
     console.log(form.person_email)
     setForm(form);
     console.log("Added") 
-
-    
-
-    
     console.log(data.length)
-
-
     //setName("")
     //setEmail("")
   }
@@ -42,7 +36,12 @@ function App() {
 
   }
 
-
+  //if you press enter in the input fields that recorsd will be added
+  const handlePress = (event) =>{
+    if(event.key == 'Enter'){
+      addData()
+    }
+  }
 
   return (
 
@@ -53,9 +52,10 @@ function App() {
       <Header></Header>
       <div className='form'>
         <Stack direction = "row"  spacing = {2}>
-        <TextField onChange={(event) => { setForm( {...form ,   person_name:event.target.value} )    }}   value={form.person_name} id="outlined-basic" label="name" variant="outlined" />  
-        <TextField onChange={(event) => { setForm(  {...form , person_email : event.target.value}  )   }}  value={form.person_email} id="two" label="email" variant="outlined" />  
-        <Button onClick={addData} color = "success"  variant="contained"><Add/></Button>
+        <TextField onKeyPress={(event) => { handlePress(event) }}  onChange={(event) => { setForm( {...form ,   person_name:event.target.value} )    }}   value={form.person_name} id="outlined-basic" label="name" variant="outlined" />  
+        <TextField onKeyPress={(event) => { handlePress(event) }}  onCopy={ () => {window.alert("copy mat kar bey")} } onChange={(event) => { setForm(  {...form , person_email : event.target.value}  )   }}  value={form.person_email} id="two" label="email" variant="outlined" />  
+        <Button draggable onDrag={() => console.log("gradded") }    onDoubleClick={ () => { window.alert("double clicked")} } onClick={addData} color = "success"  variant="contained"><Add/></Button>
+        
         </Stack>
       </div>    
 
