@@ -24,7 +24,7 @@ const Header = () =>{
 
             <NavLink style={navlinkStyles} to =  {'/'}>Home</NavLink>
             <NavLink style={navlinkStyles} to = {'/about'}>About</NavLink>
-            <NavLink style={navlinkStyles} to = {'/contact' } >Home</NavLink>
+            <NavLink style={navlinkStyles} to = {'/contact' } >Contact</NavLink>
         
         </div>
         

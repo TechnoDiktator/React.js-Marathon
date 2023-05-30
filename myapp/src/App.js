@@ -11,7 +11,9 @@ import About from './components/About';
 import Contact from './components/Contact';
 import {BrowserRouter as Router , Routes , Route , Link} from "react-router-dom"
 import Error from './components/Error';
-
+import Mail from './components/Mail';
+import Insta from './components/Insta';
+import Userdetails from './components/Userdetails';
 
 function App(){
   console.log("Function Body")
@@ -24,10 +26,19 @@ function App(){
         <Routes>
           {/* Home */}
           <Route exact path="/"  element = {<Home/>}/>
+
+          {/* Dynamic route */}   
+          <Route path = '/app/:userId' element = {<Userdetails></Userdetails>} ></Route>
+          
           {/* About */}
           <Route path="/about" element = {<About/>} />
-          {/* Contacts */}
-          <Route path="/contact" element = {<Contact></Contact>} />
+          
+          {/* Contacts        use of nested     */} 
+          <Route path="/contact" element = {<Contact></Contact>} >
+            <Route path = 'insta' element = {<Insta></Insta>} ></Route>
+            <Route path = 'mail' element = {<Mail></Mail>}  ></Route>
+          
+          </Route>
           
           {/* Error */}
           <Route path="*" element = {<Error/>} />

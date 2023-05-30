@@ -2,7 +2,7 @@ import React from 'react'
 import { ReactDOM } from 'react';
 import { useState , useEffect } from 'react';
 
-
+import { Link , Outlet } from 'react-router-dom';
 
 
 
@@ -35,18 +35,23 @@ function Home() {
 
     <button className='btn' onClick={() => { setState( state +2) }}>BUTTON {state}</button>
         {
+        
         data.map(  (element ,index) => {
             return (  
-            <div className='data' key = {index}>
-                <h4 className='data_val' >Hi</h4>
-                <h4 className='data_val'>{element.firstName}</h4>
-                <h4 className='data_val'>{element.lastName}</h4>
-                <h4 className='data_val'>{element.email}</h4>
-            </div>
+            <Link to={`/app/${element.id}`}>
+                <div className='data' key = {index}>
+                    <h4 className='data_val' >Hi' </h4>
+                    <h4 className='data_val'>{element.firstName}</h4>
+                    <h4 className='data_val'>{element.lastName}</h4>
+                    <h4 className='data_val'>{element.email}</h4>
+                </div>
+            </Link>
+            
 
             )
         })
         }
+        
     </div>
   )
 }
