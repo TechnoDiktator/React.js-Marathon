@@ -2,7 +2,7 @@ import React from 'react'
 
 function Header() {
   return (
-    <div className='header'>React Context Api</div>
+    <div className='header'>useMemo Hook</div>
   )
 }
 
