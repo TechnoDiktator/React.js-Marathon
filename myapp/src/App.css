@@ -68,7 +68,16 @@ h1 {
 
 
 
+.data{
+  color: black;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 
+}
+.data h4{
+  color: black;
+}
 
 
 

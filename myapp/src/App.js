@@ -9,29 +9,80 @@ import movies from './movies.json'
 
 
 
-
 function App(){
 
+  const [state , setState] = useState(1);
+  //const [state2 , setState2] = useState(0);
+  const [data , setData] = useState([]);
 
-                                  // 1 is the initial state 
+
+  //useEffect(()=>{
+  //  window.alert("useEffect Called")
+  //})
+  useEffect(()=>{
+    //window.alert("useEffect Called")
+    async function getData(){
+      const get  = await fetch(`https://hub.dummyapis.com/employee?noofRecords=${state}&idStarts=1001`)
+      const res = get.json() 
+      setData([res])   //data will contain the res
+      console.log(res)
+    }
+
+    getData();
+    document.title = `(${state})Employees online`
+
+  } , [state])
+  //the second arguement is optional if it is not provided then 
+
+
+  console.log("Function Body")
+
+  return (
+    <div>
+      <Header></Header>
+      {console.log('Inside JSX')}
+      <button onClick={() => { setState( state +1) }}>BUTTON{state}</button>
+      
+      {
+      
+      data.map(  (element ,index) => {
+        return (
+          
+          <div className='data' key = {index}>
+            <h4>{element.firstName}</h4>
+            <h4>{element.lastName}</h4>
+            <h4>{element.email}</h4>
+          </div>
+
+        )
+      })
+      
+      }
+
+    </div>
+  )
+
+}
+
+
+
+
+/*
+function App(){                                  // 1 is the initial state 
   const [num , setNum] = useState(1); 
-
   function dec(n){
     setNum(num -n)
   }
-
   function inc(n){
     setNum(num +n)
   }
-
 
   /*NOTE : normally you would pass the fuction reference to the onType event
   but or functions (inc and dec) also requres a parameter input 
   so we packed them inside arrow fuctions 
   and these arrow fuctions are passed as reference reference 
   the inc()  and dec() are called from inside these functions once they are called by the event 
-  */
-
+  
   return (
     <div className='"App'>
       <Header></Header>
@@ -45,7 +96,7 @@ function App(){
     </div>
   )
 }
-
+*/
 
 
 
