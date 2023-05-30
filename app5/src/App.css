@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+.compa{
+  background-color: aqua;
+  padding: 5px;
+  margin : 10px
+}
+.compb{
+  background-color: red;
+  padding: 5px;
+  margin : 10px
+}
+.compc{
+  background-color: greenyellow;
+  padding: 5px;
+  margin : 10px
+}
+.header{
+  background-color: navy;
+  align-items: center;
+  font-size: large;
+  color: aliceblue;
+  padding: 20px;
+  margin: 0px;
+}
