@@ -1,23 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+//IN USE CALLBACK WE MEMOIZE THE RESULT OF A FUCTION 
+//to avoid calling it again and again 
+//so that our app dosent rerender ..... (that is becomes slow)
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }
